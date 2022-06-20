@@ -6,7 +6,7 @@ const PORT = 3000;
 
 //MiddleWares
 app.use(express.json());
-app.use('/app/v1/tasks', tasks);
+app.use('/api/v1/tasks', tasks);
 
 //Routes
 app.get('/hello', (req, res) => {

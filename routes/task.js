@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const {getAllTasks, getTask, postTask, updateTask, deleteTask} = require("../controllers/tasks");
 
-router.route('/').get((req, res) => {
-    res.send("all tasks");
-})
+// router.route('/').get((req, res) => {
+//     res.send("all tasks");
+// })
+router.route('/').get(getAllTasks).post(postTask);
 
-router.route('/:id').get((req, res) => {
-    res.send(`This is book no. ${req.params.id}`);
-})
+router.route('/:id').get(getTask).patch(updateTask).delete(deleteTask);
 
 module.exports = router;
